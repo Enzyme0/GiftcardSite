@@ -123,9 +123,19 @@ export class User {
     public toString(): string {
         return JSON.stringify(this);
     }
+
 }
 
 
 export async function getUser(userId: number) {
     return db.findOne('users', { id: userId });
+}
+
+//by email, find user
+export async function findUser(email: string): Promise<User | null> {
+    const userDoc = await db.findOne('users', { email: email });
+    if (!userDoc)
+        return null;
+    const user = new User(userDoc.id, userDoc.name, userDoc.email, userDoc.password, userDoc.balance, userDoc.numberBought, userDoc.isAdmin, userDoc.purchases);
+    return user;
 }

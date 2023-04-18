@@ -2,7 +2,7 @@
 ///api/auth/login
 import express from 'express';
 import { Request, Response} from "express";
-import Login from "../../../controllers/api/login";
+import Login from "../../../controllers/api/auth/login";
 const router = express.Router();
 
 router.post('/api/auth/login', (req: Request, res: Response) => {

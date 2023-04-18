@@ -3,12 +3,20 @@ import { User } from './classes/User';
 import * as bearer from './helpers/bearer';
 import * as users from './helpers/users';
 import * as db from './helpers/db-funcs';
+import * as express from 'express';
+import * as expressValidator from 'express-validator';
+import * as cookieParser from 'cookie-parser';
 const user = {
     id: 0,
     name: 'test',
     email: 'fart@fart.com',
     password: 'fart'
 };
+const app = express();
+app.use(expressValidator());
+app.use(cookieParser());
+
+//use cookies and validation
 
 describe('User', () => {
     it('should create a new user', async () => {
@@ -87,3 +95,4 @@ describe('Modify Users', () => {
         expect(tempUser2.name).toBe('testeder');
     });
 });
+

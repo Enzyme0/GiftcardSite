@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.numUsers = exports.updateUser = exports.addUser = exports.getUser = exports.findOne = exports.insertOne = exports.getCollection = exports.getDb = exports.connectToDb = void 0;
+exports.getMeta = exports.numUsers = exports.updateUser = exports.addUser = exports.getUser = exports.findOne = exports.insertOne = exports.getCollection = exports.getDb = exports.connectToDb = void 0;
 const mongodb_1 = require("mongodb");
 const dburl = 'mongodb://localhost:27017';
 const mongoclient = new mongodb_1.MongoClient(dburl);
@@ -106,3 +106,11 @@ function numUsers() {
     });
 }
 exports.numUsers = numUsers;
+/**
+ * @returns basic info about the site e.g user count, sales, etc (Returns document in the form of)
+ */
+function getMeta() {
+    return __awaiter(this, void 0, void 0, function* () {
+    });
+}
+exports.getMeta = getMeta;

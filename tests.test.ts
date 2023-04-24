@@ -3,9 +3,8 @@ import { User } from './classes/User';
 import * as bearer from './helpers/bearer';
 import * as users from './helpers/users';
 import * as db from './helpers/db-funcs';
-import * as express from 'express';
-import * as expressValidator from 'express-validator';
-import * as cookieParser from 'cookie-parser';
+import express from 'express';
+import expressValidator from 'express-validator';
 const user = {
     id: 0,
     name: 'test',
@@ -14,7 +13,6 @@ const user = {
 };
 const app = express();
 app.use(expressValidator());
-app.use(cookieParser());
 
 //use cookies and validation
 

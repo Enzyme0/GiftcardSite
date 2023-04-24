@@ -1,6 +1,5 @@
 import { User } from '../classes/User';
 import * as jwt from 'jsonwebtoken';
-import { Date } from 'mongoose';
 
 require("dotenv").config();
 //const HASH = process.env.BEARER_HASH!;

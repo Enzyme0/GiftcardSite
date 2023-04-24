@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -9,7 +8,6 @@ const env = require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const loginRouter = require('./routes/login');
 app.use(cookieParser());
-app.use('/login', loginRouter);
 app.get('/', (req, res) => {
     res.send('well cum to giftcard stap');
 });
